@@ -51,7 +51,7 @@ router.delete('/:id', async (req, res) => {
     try {
         const track = await Track.findByIdAndDelete(req.params.id);
         if (!track) throw new Error("track not found");
-        res.status(204).json({ message: "success" }); //insted of render
+        res.status(200).json({ message: "success" }); //insted of render
     } catch (error) {
         res.status(400).json({ error: `failed to delete  ${error}` });
     }
